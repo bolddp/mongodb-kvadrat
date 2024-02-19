@@ -1,0 +1,28 @@
+{
+  "name": "mongodb-kvadrat",
+  "version": "1.0.0",
+  "description": "Demo material for MongoDB presentation",
+  "main": "src/index.ts",
+  "scripts": {
+    "cmd": "npx ts-node ./src/cmd.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://HQV-DS@dev.azure.com/HQV-DS/Fleet/_git/mongodb-kvadrat"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "6.3.0",
+    "uuid": "9.0.1"
+  },
+  "devDependencies": {
+    "@swc/core": "1.4.2",
+    "@types/node": "20.11.19",
+    "@types/uuid": "9.0.8",
+    "rimraf": "5.0.5",
+    "ts-node": "10.9.2",
+    "typescript": "5.3.3"
+  }
+}
+
