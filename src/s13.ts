@@ -1,8 +1,9 @@
-import { DemoDatabase, logObject } from './cmd';
+import { DemoDatabase } from './cmd';
 
 /**
- * Robert Zinger never forgave us for spelling his name wrong, so he quit.
- * We need to remove him as account manager.
+ * Robert Zinger never forgave us for spelling his
+ * name wrong, so he quit. We need to remove him
+ * as account manager.
  */
 export const s13 = async (db: DemoDatabase) => {
   await db.companies.updateMany(

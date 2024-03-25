@@ -1,18 +1,20 @@
 import { Collection, Db, MongoClient, ServerApiVersion } from 'mongodb';
+import { Employee } from './models/Employee';
+import { Company } from './models/Company';
 import { s01 } from './s01';
 import { s02 } from './s02';
-import { Company } from './models/company';
 import { s03 } from './s03';
 import { s04 } from './s04';
 import { s05 } from './s05';
 import { s06 } from './s06';
 import { s07 } from './s07';
-import { s08 } from './s08';
+import { s08b } from './s08b';
 import { s09 } from './s09';
 import { s10 } from './s10';
 import { s11 } from './s11';
 import { s12 } from './s12';
 import { s13 } from './s13';
+import { s08a } from './s08a';
 
 let client: MongoClient | undefined;
 
@@ -35,6 +37,7 @@ const closeDb = async () => {
 
 export interface DemoDatabase {
   companies: Collection<Company>;
+  employees: Collection<Employee>;
 }
 
 export type DbStatement = (db: DemoDatabase) => Promise<any>;
@@ -47,7 +50,8 @@ const statements: { [key: string]: DbStatement } = {
   s05,
   s06,
   s07,
-  s08,
+  s08a,
+  s08b,
   s09,
   s10,
   s11,
@@ -72,6 +76,7 @@ export const logObject = (obj: any) => {
   try {
     await statement({
       companies: mongoDb.collection<Company>('companies'),
+      employees: mongoDb.collection<Employee>('employees'),
     });
   } catch (error: any) {
     console.log(`MongoDB reported error: ${error.message}`);

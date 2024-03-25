@@ -1,17 +1,16 @@
+import { Address } from './Address';
+
 export interface Company {
   _id?: string;
   companyId?: string;
   name: string;
-  address?: {
-    street: string;
-    zipCode: string;
-    city: string;
-  };
+  address?: Address;
   contacts?: {
     name: string;
     phoneNumber?: string;
   }[];
   accountManagers?: {
+    employeeId: string;
     name: string;
     budget: number;
   }[];
